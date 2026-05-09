@@ -1,7 +1,14 @@
 // ===========================
-// IMAGES
+// HERO SLIDESHOW IMAGES
 // ===========================
-const images = Array.from({ length: 17 }, (_, i) => `images/house-${i + 1}.jpg`);
+const heroImages = [
+  'images/hero-1.jpg',
+  'images/hero-2.jpg',
+  'images/hero-3.jpg',
+  'images/hero-4.jpg',
+  'images/hero-5.jpg',
+  'images/hero-6.jpg'
+];
 
 // ===========================
 // SLIDESHOW
@@ -9,7 +16,7 @@ const images = Array.from({ length: 17 }, (_, i) => `images/house-${i + 1}.jpg`)
 const slideshowEl = document.getElementById('slideshow');
 
 if (slideshowEl) {
-  images.forEach((src, i) => {
+  heroImages.forEach((src, i) => {
     const div = document.createElement('div');
     div.classList.add('slide');
     if (i === 0) div.classList.add('active');
@@ -52,7 +59,6 @@ if (hamburger) {
   });
 }
 
-// Close menu when a link is clicked
 navLinks.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => {
     navLinks.classList.remove('open');
@@ -87,7 +93,7 @@ const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightbox-img');
 const lightboxClose = document.getElementById('lightbox-close');
 
-document.querySelectorAll('.showcase-item img').forEach(img => {
+document.querySelectorAll('.showcase-img img').forEach(img => {
   img.addEventListener('click', () => {
     lightboxImg.src = img.src;
     lightbox.classList.add('open');
@@ -126,7 +132,7 @@ if (contactForm) {
 }
 
 // ===========================
-// SMOOTH SCROLL FOR NAV LINKS
+// SMOOTH SCROLL
 // ===========================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
